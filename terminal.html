@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>FAUXNET // Terminal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="terminal-body">
+  <!-- Si tu as déjà cette nav ailleurs, garde-la identique -->
+  <nav class="global-nav">
+    <a href="index.html" class="brand">FAUXNET<span>.corp</span></a>
+    <div class="nav-links">
+      <a href="workspace.html">Espace intégral</a>
+      <a href="browser.html">Navigateur</a>
+      <a href="console.html">Console</a>
+      <a href="terminal.html?user=invite">Terminal</a>
+      <a href="markdown.html">Markdown</a>
+    </div>
+  </nav>
+
+  <div id="terminal" class="terminal-screen">
+    <pre id="term-output"></pre>
+
+    <div class="term-input-row">
+      <span id="term-prompt" class="term-prompt"></span>
+      <input
+        id="term-input"
+        type="text"
+        autocomplete="off"
+        placeholder="help, clear, info, exit..."
+      />
+    </div>
+  </div>
+
+  <script src="js/terminal.js"></script>
+</body>
+</html>

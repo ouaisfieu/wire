@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>FAUXNET // Éditeur Markdown</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="global-nav">
+    <a href="index.html" class="brand">FAUXNET<span>.corp</span></a>
+    <div class="nav-links">
+      <a href="workspace.html">Espace intégral</a>
+      <a href="browser.html">Navigateur</a>
+      <a href="console.html">Console</a>
+      <a href="terminal.html?user=invite">Terminal</a>
+      <a href="markdown.html">Markdown</a>
+    </div>
+  </nav>
+
+  <main class="layout-center">
+    <div class="card card-large md-card" id="md-editor">
+      <header class="md-header">
+        <h1>Éditeur Markdown</h1>
+        <p class="subtitle">
+          Rédige des textes, manifeste dystopique ou doc technique, puis exporte en <code>.md</code>.
+        </p>
+      </header>
+
+      <!-- Barre d'actions -->
+      <div class="md-toolbar">
+        <button data-md="h1">H1</button>
+        <button data-md="h2">H2</button>
+        <button data-md="bold"><strong>B</strong></button>
+        <button data-md="italic"><em>I</em></button>
+        <button data-md="link">Lien</button>
+        <button data-md="ul">Liste</button>
+        <button data-md="code">Code</button>
+        <button data-md="quote">Citation</button>
+        <span class="md-toolbar-sep"></span>
+        <button id="md-import-btn">Importer .md</button>
+        <button id="md-export-btn" class="primary">Exporter .md</button>
+        <input
+          type="file"
+          id="md-file-input"
+          accept=".md,.markdown,.txt"
+          style="display:none"
+        />
+      </div>
+
+      <!-- Zone d'édition + prévisualisation -->
+      <section class="md-layout">
+        <div class="md-pane">
+          <div class="md-pane-header">
+            <span>Markdown</span>
+          </div>
+          <textarea
+            id="md-input"
+            placeholder="# Titre\n\nCommence à écrire ton fichier Markdown..."
+          ></textarea>
+        </div>
+        <div class="md-pane md-pane-preview">
+          <div class="md-pane-header">
+            <span>Prévisualisation</span>
+          </div>
+          <div id="md-preview" class="md-preview"></div>
+        </div>
+      </section>
+
+      <p class="small">
+        Astuce : les fichiers <code>.md</code> exportés peuvent être intégrés
+        à ton faux Internet et affichés via <a href="markdown-viewer.html" >la visionneuse</a>.
+      </p>
+    </div>
+  </main>
+
+  <script src="js/markdown.js"></script>
+</body>
+</html>

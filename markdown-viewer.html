@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>FAUXNET // Visionneuse Markdown</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="global-nav">
+    <a href="index.html" class="brand">FAUXNET<span>.corp</span></a>
+    <div class="nav-links">
+      <a href="workspace.html">Espace intégral</a>
+      <a href="browser.html">Navigateur</a>
+      <a href="console.html">Console</a>
+      <a href="terminal.html?user=invite">Terminal</a>
+      <a href="markdown.html">Markdown</a>
+    </div>
+  </nav>
+
+  <main class="layout-center">
+    <div class="card card-large md-card md-viewer-card">
+      <header class="md-header">
+        <h1>Visionneuse Markdown</h1>
+        <p class="subtitle">
+          Navigue dans une bibliothèque de fichiers <code>.md</code> :
+          <br />
+          ton dossier local <strong>ou</strong> le dossier <code>docs/</code> de FAUXNET.
+        </p>
+      </header>
+
+      <section class="md-viewer-layout">
+        <aside class="md-viewer-sidebar">
+          <div class="md-viewer-actions">
+            <button id="mdv-scan-local">Scanner un dossier local</button>
+            <input
+              type="file"
+              id="mdv-dir-input"
+              webkitdirectory
+              multiple
+              style="display:none"
+            />
+
+            <button id="mdv-load-docs">Charger docs/ FAUXNET</button>
+            <span class="small">
+              Nécessite un fichier <code>docs/index.json</code>
+              listant la bibliothèque.
+            </span>
+          </div>
+
+          <div class="mdv-list-wrap">
+            <h2>Fichiers</h2>
+            <ul id="mdv-file-list" class="mdv-file-list">
+              <!-- fichiers listés ici -->
+            </ul>
+          </div>
+        </aside>
+
+        <section class="md-viewer-main">
+          <article id="mdv-content" class="md-preview md-viewer-empty">
+            <p class="muted">
+              Aucun fichier chargé.<br />
+              • Clique sur <strong>Scanner un dossier local</strong> pour
+              parcourir tes propres fichiers.<br />
+              • Ou sur <strong>Charger docs/ FAUXNET</strong> pour voir la
+              bibliothèque du projet.
+            </p>
+          </article>
+        </section>
+      </section>
+    </div>
+  </main>
+
+  <!-- parseur + éditeur (déjà en place) -->
+  <script src="js/markdown.js"></script>
+  <!-- nouvelle logique de visionneuse -->
+  <script src="js/markdown-viewer.js"></script>
+</body>
+</html>

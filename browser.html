@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+  <title>FAUXNET // Navigateur</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="browser-body">
+
+
+  <nav class="global-nav">
+    <a href="index.html" class="brand">FAUXNET<span>.corp</span></a>
+    <div class="nav-links">
+      <a href="workspace.html">Espace intégral</a>
+      <a href="browser.html">Navigateur</a>
+      <a href="console.html">Console</a>
+      <a href="terminal.html?theme=unix&user=invite">Terminal</a>
+      <a href="markdown.html">Markdown</a>
+    </div>
+  </nav>
+  <!-- le reste de ta page ici -->
+
+
+
+
+  
+  <div class="browser-window">
+    <div class="browser-titlebar">
+      <span class="dot red"></span>
+      <span class="dot amber"></span>
+      <span class="dot green"></span>
+      <span class="browser-title">FAUXNAV 1.0 — propriété exclusive de MegaCorp</span>
+    </div>
+
+    <div class="browser-tabs">
+      <button class="tab active" data-url="sites/corp-search.html">Search.corp</button>
+      <button class="tab" data-url="sites/corp-news.html">News.corp</button>
+      <button class="tab" data-url="sites/corp-social.html">Social.corp</button>
+      <button class="tab" data-url="sites/ultimate-headhunters.html">Ultima Headhunters</button>
+
+    </div>
+
+    <div class="browser-urlbar">
+      <span class="scheme">https://</span>
+      <span id="address-text">search.corp</span>
+      <span class="lock">🔒 100% sécurisé (promis)</span>
+    </div>
+
+    <div class="browser-main">
+      <aside class="browser-sidebar">
+        <h2>Favoris certifiés</h2>
+        <ul>
+          <li><button class="link" data-url="sites/corp-search.html" data-label="search.corp">
+            🔍 Moteur officiel
+          </button></li>
+          <li><button class="link" data-url="sites/corp-news.html" data-label="news.corp">
+            📰 Infos approuvées
+          </button></li>
+          <li><button class="link" data-url="sites/corp-social.html" data-label="social.corp">
+            💬 Réseau unique
+          </button></li>
+
+
+          <li><button class="link" data-url="sites/ultimate-headhunters.html" data-label="ultima-headhunters.corp">🎯 Ultima Headhunters
+          </button></li>
+
+
+          
+        </ul>
+        <p class="tiny">
+          D’autres sites existent peut-être.<br>
+          Leurs risques aussi.
+        </p>
+      </aside>
+
+      <section class="browser-viewport">
+        <iframe id="browser-frame"
+                src="sites/corp-search.html"
+                title="Fenêtre FAUXNET"></iframe>
+      </section>
+    </div>
+  </div>
+
+
+
+<span class="lock glitch-soft">🔒 100% sécurisé (promis)</span>
+
+
+
+  
+
+  <script src="js/browser.js"></script>
+</body>
+</html>

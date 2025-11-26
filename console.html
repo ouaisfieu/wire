@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>FAUXNET // Console corpo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="console-body">
+  <!-- Navigation globale cohérente avec les autres pages -->
+  <nav class="global-nav">
+    <a href="index.html" class="brand">FAUXNET<span>.corp</span></a>
+    <div class="nav-links">
+      <a href="workspace.html">Espace intégral</a>
+      <a href="browser.html">Navigateur</a>
+      <a href="console.html">Console</a>
+      <a href="terminal.html?user=invite">Terminal</a>
+      <a href="markdown.html">Markdown</a>
+    </div>
+  </nav>
+
+  <div class="console-wrap">
+    <div class="console-header">
+      <span>MEGACORP // Console interne</span>
+      <span class="status">Profil : <span id="console-role">invité</span></span>
+    </div>
+
+    <div id="console-output" class="console-output"></div>
+
+    <div class="console-input-row">
+      <span id="console-prompt" class="prompt"></span>
+      <input
+        id="console-input"
+        type="text"
+        autocomplete="off"
+        placeholder="help, sites, logs, leak, open browser..."
+      />
+    </div>
+  </div>
+
+  <script src="js/console.js"></script>
+</body>
+</html>

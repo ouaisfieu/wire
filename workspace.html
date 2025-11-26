@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAUXNET // Espace intégral</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="global-nav">
+    <a href="index.html" class="brand">FAUXNET<span>.corp</span></a>
+    <div class="nav-links">
+      <a href="workspace.html">Espace intégral</a>
+      <a href="browser.html">Navigateur</a>
+      <a href="console.html">Console</a>
+      <a href="terminal.html?theme=unix&user=invite">Terminal</a>
+      <a href="markdown.html">Markdown</a>
+    </div>
+  </nav>
+
+  <main class="layout-center">
+    <div class="card card-large workspace-card">
+      <h1>Espace intégral</h1>
+      <p class="subtitle">
+        Navigateur, console et terminal réunis dans une seule fenêtre.
+      </p>
+
+      <div class="workspace-tabs">
+        <button class="wtab active" data-view="view-browser">Navigateur</button>
+        <button class="wtab" data-view="view-console">Console</button>
+        <button class="wtab" data-view="view-terminal">Terminal</button>
+      </div>
+
+      <div class="workspace-views">
+        <section id="view-browser" class="workspace-view active">
+          <iframe src="browser.html" title="Navigateur FAUXNET"></iframe>
+        </section>
+        <section id="view-console" class="workspace-view">
+          <iframe src="console.html" title="Console FAUXNET"></iframe>
+        </section>
+        <section id="view-terminal" class="workspace-view">
+          <iframe src="terminal.html?theme=unix&user=invite"
+                  title="Terminal FAUXNET"></iframe>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const wtabs = document.querySelectorAll(".wtab");
+    const views = document.querySelectorAll(".workspace-view");
+
+    wtabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        const viewId = tab.dataset.view;
+        wtabs.forEach(t => t.classList.remove("active"));
+        views.forEach(v => v.classList.remove("active"));
+        tab.classList.add("active");
+        document.getElementById(viewId).classList.add("active");
+      });
+    });
+  </script>
+</body>
+</html>
