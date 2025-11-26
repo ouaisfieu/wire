@@ -1,0 +1,14 @@
+{
+  "files": [
+    "EATME.md",
+    "guide-utilisateur.md",
+    "01-intro_public.md",
+    "02-charte-utilisation_public.md",
+    "10-mode-operatoire_internal.md",
+    "20-classification-donnees_internal.md",
+    "30-modele-de-menace_internal.md",
+    "80-procedures-incident_confidential.md",
+    "99-notes-strategiques_classified.md",
+    "notes/experiments.md"
+  ]
+}
