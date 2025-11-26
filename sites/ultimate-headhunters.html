@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>ULTIMA HEADHUNTERS // AISBL d’Intelligence Économique</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    /* Styles spécifiques à la page, compatibles avec ton style global */
+
+    .uh-body {
+      background: #05060a;
+      color: var(--text);
+      font-family: var(--font);
+      min-height: 100vh;
+      padding: 1.2rem 1rem 2rem;
+    }
+
+    .uh-hero {
+      max-width: 960px;
+      margin: 0 auto 1.5rem;
+      text-align: left;
+    }
+
+    .uh-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+      background: rgba(0, 0, 0, 0.35);
+    }
+
+    .uh-grid-main {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    @media (min-width: 900px) {
+      .uh-grid-main {
+        display: grid;
+        grid-template-columns: minmax(0, 2fr) minmax(0, 1.3fr);
+        align-items: flex-start;
+      }
+    }
+
+    .uh-card {
+      background: rgba(0, 0, 0, 0.28);
+      border-radius: 16px;
+      padding: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .uh-card h2 {
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .uh-hero h1 {
+      font-size: 1.7rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .uh-hero p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (min-width: 768px) {
+      .uh-hero h1 {
+        font-size: 2rem;
+      }
+    }
+
+    .uh-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin: 0.7rem 0 0.5rem;
+    }
+
+    .uh-badge {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--muted);
+    }
+
+    .uh-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.7rem;
+    }
+
+    .uh-cta-row .btn {
+      font-size: 0.85rem;
+      padding-inline: 0.9rem;
+    }
+
+    .uh-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .uh-role-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.4rem 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .uh-role-item {
+      padding: 0.45rem 0.55rem;
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      cursor: pointer;
+      font-size: 0.86rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .uh-role-item:hover {
+      border-color: rgba(0, 224, 255, 0.4);
+    }
+
+    .uh-role-title {
+      font-weight: 500;
+    }
+
+    .uh-role-tag {
+      font-size: 0.7rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      background: rgba(0, 224, 255, 0.12);
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    .uh-role-meta {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 0.15rem;
+    }
+
+    .uh-detail {
+      margin-top: 0.7rem;
+      padding-top: 0.7rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 0.85rem;
+    }
+
+    .uh-detail h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .uh-detail ul {
+      list-style: disc;
+      padding-left: 1.1rem;
+    }
+
+    .uh-switch-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .uh-switch-row label {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .uh-switch-row select {
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: var(--text);
+      font-size: 0.8rem;
+      padding: 0.25rem 0.7rem;
+    }
+
+    .uh-matrix {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.4rem;
+      margin: 0.4rem 0 0.6rem;
+    }
+
+    .uh-matrix-cell {
+      padding: 0.45rem 0.55rem;
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 0.8rem;
+    }
+
+    .uh-matrix-label {
+      color: var(--muted);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .uh-matrix-val {
+      font-size: 0.9rem;
+    }
+
+    .uh-disclaimer {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 0.8rem;
+    }
+
+    .uh-disclaimer strong {
+      color: var(--accent);
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body class="uh-body">
+  <header class="uh-hero">
+    <div class="uh-pill">
+      <span>⚖️ AISBL d’intelligence économique</span>
+      <span>•</span>
+      <span>💼 Agence de recrutement “spécialisée”</span>
+    </div>
+    <h1>ULTIMA HEADHUNTERS</h1>
+    <p>
+      L’ultime interface entre les organisations les plus exposées
+      et les chasseurs de têtes les plus discrets. En façade :
+      une agence de recrutement spécialisée. En substance :
+      une plateforme d’intelligence économique à but non lucratif.
+    </p>
+
+    <div class="uh-badges">
+      <span class="uh-badge">Sélection de profils rares</span>
+      <span class="uh-badge">Veille stratégique &amp; influence</span>
+      <span class="uh-badge">Cartographie d’écosystèmes humains</span>
+      <span class="uh-badge">Discrétion statutaire (AISBL)</span>
+    </div>
+
+    <div class="uh-cta-row">
+      <a href="#roles" class="btn primary">Voir les “opportunités”</a>
+      <a href="#matrix" class="btn">Découvrir la matrice de profils</a>
+    </div>
+  </header>
+
+  <main class="uh-grid-main">
+    <!-- Colonne principale : rôles & détails -->
+    <section class="uh-card" id="roles">
+      <div class="uh-label">Profils actuellement recherchés</div>
+      <ul class="uh-role-list" id="uh-role-list">
+        <!-- Les rôles sont insérés par JS -->
+      </ul>
+
+      <div class="uh-detail" id="uh-role-detail">
+        <h3>Sélectionne un profil pour afficher le brief confidentiel.</h3>
+        <p class="muted">
+          Les intitulés sont présentés comme des postes de haut niveau.  
+          Les descriptions révèlent leur véritable rôle dans l’architecture
+          d’intelligence économique de l’AISBL.
+        </p>
+      </div>
+    </section>
+
+    <!-- Colonne latérale : matrice & mode lecture -->
+    <aside class="uh-card" id="matrix">
+      <div class="uh-switch-row">
+        <label for="uh-mode-select">
+          Mode d’affichage :
+          <span id="uh-mode-label">vitrine recrutement</span>
+        </label>
+        <select id="uh-mode-select">
+          <option value="front">Vitrine recrutement</option>
+          <option value="intel">Lecture intelligence éco</option>
+        </select>
+      </div>
+
+      <div class="uh-matrix">
+        <div class="uh-matrix-cell">
+          <div class="uh-matrix-label">Secteurs cibles</div>
+          <div class="uh-matrix-val" id="uh-matrix-sector">
+            Conseil, Tech, Industrie
+          </div>
+        </div>
+        <div class="uh-matrix-cell">
+          <div class="uh-matrix-label">Densité de réseau</div>
+          <div class="uh-matrix-val" id="uh-matrix-network">
+            Chasseurs C-level &amp; boards
+          </div>
+        </div>
+        <div class="uh-matrix-cell">
+          <div class="uh-matrix-label">Type d’interventions</div>
+          <div class="uh-matrix-val" id="uh-matrix-actions">
+            Recherche, matching, “accompagnement”
+          </div>
+        </div>
+        <div class="uh-matrix-cell">
+          <div class="uh-matrix-label">Angle non déclaré</div>
+          <div class="uh-matrix-val" id="uh-matrix-hidden">
+            Cartographie d’influence humaine
+          </div>
+        </div>
+      </div>
+
+      <p class="uh-disclaimer">
+        En mode <strong>vitrine recrutement</strong>, les intitulés restent
+        strictement RH.  
+        En mode <strong>lecture intelligence éco</strong>, les mêmes éléments
+        sont relus comme des briques de collecte, de structuration et de
+        projection stratégique.
+      </p>
+    </aside>
+  </main>
+
+  <script>
+    // Données des profils : façade RH + lecture intel
+    const UH_ROLES = [
+      {
+        id: "uh-strat-headhunter",
+        frontTitle: "Directeur·rice Chasse Ultime – Marchés Stratégiques",
+        intelTitle: "Architecte Réseaux Humains – Accès Décisionnaires",
+        level: "C-level / Board",
+        zone: "UE + zones à forte densité de sièges",
+        frontSummary:
+          "Pilotage d’une équipe de chasseurs de têtes senior sur des mandats à forte visibilité. " +
+          "Responsabilité globale de la stratégie d’acquisition de talents pour des organisations complexes.",
+        intelSummary:
+          "Point d’entrée privilégié vers les flux de décisions, mouvements de cadres et recompositions " +
+          "de gouvernance dans les secteurs critiques. Rôle central dans la lecture anticipée des trajectoires.",
+        frontBullets: [
+          "Conduire des missions de recrutement à haute criticité.",
+          "Entretenir des relations durables avec les directions générales.",
+          "Superviser la qualité des évaluations et des recommandations."
+        ],
+        intelBullets: [
+          "Maintenir une cartographie vivante des alliances et rivalités au sommet.",
+          "Identifier les profils pivot susceptibles de reconfigurer un écosystème.",
+          "Produire des signaux faibles à partir de trajectoires de carrière."
+        ],
+        tag: "Stratégie / Gouvernance"
+      },
+      {
+        id: "uh-network-analyst",
+        frontTitle: "Responsable Intelligence Talent & Réseaux",
+        intelTitle: "Analyste Graphes Relationnels & Influence",
+        level: "Senior",
+        zone: "Bruxelles-centre + institutions",
+        frontSummary:
+          "Mise en place et pilotage d’outils de suivi des parcours, des compétences et des interactions " +
+          "entre talents à haut potentiel.",
+        intelSummary:
+          "Construction et exploitation de graphes relationnels pour identifier hubs, brokers, " +
+          "zones de dépendance et vulnérabilités humaines dans les chaînes de décision.",
+        frontBullets: [
+          "Structurer les données de talents et de clients.",
+          "Identifier les profils clés dans des communautés professionnelles.",
+          "Proposer des scénarios de mise en relation."
+        ],
+        intelBullets: [
+          "Qualifier les liens de loyauté, de dépendance et de rivalité.",
+          "Détecter les changements de polarité dans un réseau donné.",
+          "Contribuer aux scénarios de repositionnement d’acteurs."
+        ],
+        tag: "Analyse de réseau"
+      },
+      {
+        id: "uh-field-liaison",
+        frontTitle: "Consultant·e Senior Relations Marché & Alliances RH",
+        intelTitle: "Liaison Terrain / Veille Qualitative",
+        level: "Senior",
+        zone: "Multi-pays – déplacements fréquents",
+        frontSummary:
+          "Intervenir auprès des clients pour qualifier leurs besoins, accompagner les processus de sélection " +
+          "et sécuriser la relation sur la durée.",
+        intelSummary:
+          "Collecter des informations qualitatives sur les dynamiques internes, les tensions latentes et " +
+          "les marges de manœuvre réelles des organisations rencontrées.",
+        frontBullets: [
+          "Conduire des entretiens approfondis avec les parties prenantes.",
+          "Produire des comptes rendus opérationnels exploitables par les équipes RH.",
+          "Accompagner les phases de négociation et d’intégration."
+        ],
+        intelBullets: [
+          "Repérer les signaux faibles d’instabilité ou de réorganisation.",
+          "Évaluer la cohérence entre discours institutionnel et pratiques réelles.",
+          "Remonter des éléments d’ambiance et de climat social utiles à la décision."
+        ],
+        tag: "Terrain / Humain"
+      },
+      {
+        id: "uh-method-lab",
+        frontTitle: "Responsable Méthodes & Éthique Recrutement",
+        intelTitle: "Concepteur Cadres d’Observation & Filtrage",
+        level: "Coordination",
+        zone: "Siège AISBL",
+        frontSummary:
+          "Définition des méthodologies d’évaluation, des grilles de compétence et des protocoles éthiques " +
+          "en matière de chasse de têtes.",
+        intelSummary:
+          "Conception des cadres d’observation, des filtres d’interprétation et des seuils de vigilance " +
+          "qui orientent la lecture globale des situations.",
+        frontBullets: [
+          "Mettre à jour les référentiels de compétences.",
+          "Garantir la conformité des pratiques d’évaluation.",
+          "Former les équipes internes aux standards éthiques."
+        ],
+        intelBullets: [
+          "Définir ce qui est vu, ce qui est ignoré, et ce qui est signalé.",
+          "Documenter les angles morts acceptés dans les analyses.",
+          "Ajuster les seuils d’alerte selon les contextes stratégiques."
+        ],
+        tag: "Cadres & Méthodes"
+      }
+    ];
+
+    const roleListEl = document.getElementById("uh-role-list");
+    const roleDetailEl = document.getElementById("uh-role-detail");
+    const modeSelectEl = document.getElementById("uh-mode-select");
+    const modeLabelEl = document.getElementById("uh-mode-label");
+
+    const matrixSectorEl = document.getElementById("uh-matrix-sector");
+    const matrixNetworkEl = document.getElementById("uh-matrix-network");
+    const matrixActionsEl = document.getElementById("uh-matrix-actions");
+    const matrixHiddenEl = document.getElementById("uh-matrix-hidden");
+
+    let currentMode = "front"; // "front" (recrutement) ou "intel"
+    let currentRoleId = null;
+
+    function renderRoleList() {
+      roleListEl.innerHTML = "";
+      UH_ROLES.forEach((role) => {
+        const li = document.createElement("li");
+        li.className = "uh-role-item";
+        li.dataset.roleId = role.id;
+
+        const left = document.createElement("div");
+        const title = document.createElement("div");
+        title.className = "uh-role-title";
+        title.textContent =
+          currentMode === "front" ? role.frontTitle : role.intelTitle;
+
+        const meta = document.createElement("div");
+        meta.className = "uh-role-meta";
+        meta.textContent = `${role.level} • ${role.zone}`;
+
+        left.appendChild(title);
+        left.appendChild(meta);
+
+        const tag = document.createElement("div");
+        tag.className = "uh-role-tag";
+        tag.textContent = role.tag;
+
+        li.appendChild(left);
+        li.appendChild(tag);
+
+        li.addEventListener("click", () => {
+          currentRoleId = role.id;
+          renderRoleDetail();
+        });
+
+        roleListEl.appendChild(li);
+      });
+    }
+
+    function renderRoleDetail() {
+      const role = UH_ROLES.find((r) => r.id === currentRoleId);
+      if (!role) return;
+
+      const title = currentMode === "front" ? role.frontTitle : role.intelTitle;
+      const summary =
+        currentMode === "front" ? role.frontSummary : role.intelSummary;
+      const bullets =
+        currentMode === "front" ? role.frontBullets : role.intelBullets;
+
+      roleDetailEl.innerHTML = "";
+
+      const h = document.createElement("h3");
+      h.textContent = title;
+
+      const p = document.createElement("p");
+      p.textContent = summary;
+
+      const ul = document.createElement("ul");
+      bullets.forEach((b) => {
+        const li = document.createElement("li");
+        li.textContent = b;
+        ul.appendChild(li);
+      });
+
+      roleDetailEl.appendChild(h);
+      roleDetailEl.appendChild(p);
+      roleDetailEl.appendChild(ul);
+    }
+
+    function renderMatrix() {
+      if (currentMode === "front") {
+        modeLabelEl.textContent = "vitrine recrutement";
+        matrixSectorEl.textContent = "Conseil, Tech, Industrie";
+        matrixNetworkEl.textContent = "Chasseurs C-level & boards";
+        matrixActionsEl.textContent = "Recherche, matching, “accompagnement”";
+        matrixHiddenEl.textContent = "Cartographie d’influence humaine";
+      } else {
+        modeLabelEl.textContent = "lecture intelligence éco";
+        matrixSectorEl.textContent = "Zones denses en centres de décision";
+        matrixNetworkEl.textContent = "Nœuds, brokers, relais d’influence";
+        matrixActionsEl.textContent =
+          "Collecte, structuration, scénarisation de trajectoires";
+        matrixHiddenEl.textContent =
+          "Projection des recompositions possibles à partir des mouvements de personnes";
+      }
+    }
+
+    // Initialisation
+    renderRoleList();
+    renderMatrix();
+
+    // Mode switch
+    modeSelectEl.addEventListener("change", () => {
+      currentMode = modeSelectEl.value === "intel" ? "intel" : "front";
+      renderRoleList();
+      renderMatrix();
+      if (currentRoleId) {
+        renderRoleDetail();
+      } else {
+        roleDetailEl.innerHTML =
+          '<h3>Sélectionne un profil pour afficher le brief confidentiel.</h3>' +
+          '<p class="muted">Les intitulés sont relus différemment selon le mode choisi.</p>';
+      }
+    });
+  </script>
+</body>
+</html>

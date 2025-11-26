@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>search.corp</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="site-body">
+  <header class="site-header">
+    <h1>search<span class="accent">.corp</span></h1>
+    <p>Le seul moteur dont vous avez besoin. Les autres sont dangereux.</p>
+  </header>
+
+  <main class="site-main">
+    <form class="search-form" onsubmit="event.preventDefault(); showResult();">
+      <input id="q" type="text" placeholder="Que souhaitez-vous penser aujourd'hui ?" />
+      <button type="submit" class="btn primary">Rechercher</button>
+    </form>
+    <div id="results" class="results">
+      <p class="muted">Tape une requête pour voir les résultats “optimisés”.</p>
+    </div>
+  </main>
+
+  <script>
+    function showResult() {
+      const q = document.getElementById('q').value.trim() || 'votre question';
+      const box = document.getElementById('results');
+      box.innerHTML = `
+        <h2>Résultats pour « ${q} »</h2>
+        <ol>
+          <li><strong>Article officiel :</strong> Pourquoi MegaCorp a déjà trouvé la meilleure réponse pour vous.</li>
+          <li>Guide utilisateur : Comment éviter les sources non-certifiées qui nuisent à votre sérénité.</li>
+          <li>FAQ : Vous n'avez pas besoin de plus d'informations pour prendre la bonne décision.</li>
+        </ol>
+        <p class="tiny">Affichage des résultats : 0,01s — Options de filtrage : désactivées par votre sécurité.</p>
+      `;
+    }
+  </script>
+</body>
+</html>
